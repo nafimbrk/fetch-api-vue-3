@@ -1,34 +1,31 @@
-//import vue router
 import { createRouter, createWebHistory } from 'vue-router'
 
-//define a routes
 const routes = [
     {
-        path: '/',
-        name: 'home',
-        component: () => import( /* webpackChunkName: "home" */ '../views/home.vue')
-    },
-    {
-        path: '/posts',
-        name: 'posts.index',
-        component: () => import( /* webpackChunkName: "index" */ '../views/posts/index.vue')
+        path: '/persons',
+        name: 'persons.index',
+        component: () => import('../views/persons/index.vue')
     },
     {
         path: '/create',
-        name: 'posts.create',
-        component: () => import( /* webpackChunkName: "create" */ '../views/posts/create.vue')
+        name: 'persons.create',
+        component: () => import('../views/persons/create.vue')
     },
     {
         path: '/edit/:id',
-        name: 'posts.edit',
-        component: () => import( /* webpackChunkName: "edit" */ '../views/posts/edit.vue')
+        name: 'persons.edit',
+        component: () => import('../views/persons/edit.vue')
+    },
+    {
+        path: '/show/:id',
+        name: 'persons.show',
+        component: () => import('../views/persons/show.vue')
     }
 ]
 
-//create router
 const router = createRouter({
     history: createWebHistory(),
-    routes // <-- routes,
+    routes
 })
 
 export default router
